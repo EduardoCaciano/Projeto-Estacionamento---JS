@@ -1,0 +1,23 @@
+/*Reset CSS*/
+
+/* (* significa seletor universal)*/
+*{
+    margin: 0px;
+    padding: 0px;
+    /*Trava o elemento para que não sofra mudanças de tamanho*/
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgba(137, 250, 250, 0.349);
+}
+
+#containerPrincipalEmpresa{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(137, 250, 250, 0.349);
+    display: block;
+}
+
+
+

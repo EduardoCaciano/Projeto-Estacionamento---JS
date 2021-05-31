@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/containerPrincipal.css" rel="stylesheet">
+    <link href="../css/containerEmpresa.css" rel="stylesheet">
+    <link href="../css/botoes.css" rel="stylesheet">
+    <title>Fast Parking</title>
+    <script src="../main.js" defer></script>
+</head>
+<body>
+    <div id="containerPrincipalEmpresa">
+        <div id="containerEmpresa">
+            <div id="caixaEmpresa">
+                <div id="nomeEmpresa">
+                    <h1>
+                        <span id="Fast">Fast</span>
+                        <span id="Parking">Parking</span>
+                    </h1>
+                </div>
+                <div id="fotoEmpresa"></div>
+            </div>
+        </div>
+
+        <div id="containerPrincipalRegistro">
+            <div id="containerRegistro">       
+                <form id="formularioRegistro">
+                    </br></br></br>
+                        <div>
+                            <label for="nome">Nome</label>
+                            <input type="text" class="input-form" id="nome" placeholder="Digite o nome do motorista" required/>
+                        </div>
+                    </br></br>
+                        <div>
+                            <label for="placa">Placa&nbsp</label>
+                            <input type="text" class="input-form" id="placa" placeholder="Digite a placa do veiculo" required/>
+                        </div>
+                </form>
+                <footer class="botoesRegistro">
+                    <button type="submit" class="button green" id="adicionar">Adicionar</button>
+                    <button type="button" class="button yellow" id="precos" onclick="javascript:window.location.href='preco.html'">Preços</button>
+                </footer>
+            </div>
+        </div>
+
+        <table id="tableCars">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Placa</th>
+                    <th>data</th>
+                    <th>Hora</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Maria da Silva</td>
+                    <td>RCA-3438</td>
+                    <td>12/11/2018</td>
+                    <td>14:00</td>
+                    <td id="botao">
+                        <button id="button-receipt" class="button green" type="button" onclick="javascript:window.location.href='./comprovanteEntrada.html'">Comp.</button>
+                        <button id="button-edit" class="button blue" type="button">Editar</button>
+                        <button id="button-exit" class="button red" type="button" onclick="javascript:window.location.href='./comprovanteSaida.html'">Saída</button>
+                    </td>
+                </tr>
+            </tbody>
+            <!-- <tbody>
+                <td>Marcos Coelho</td>
+                <td>FKX-3651</td>
+                <td>12/11/2018</td>
+                <td>14:11</td>
+                <td id="botao">
+                    <button id="button-receipt" class="button green" type="button" onclick="javascript:window.location.href='./comprovante.html'">Comp.</button>
+                    <button id="button-edit" class="button blue" type="button">Editar</button>
+                    <button id="button-exit" class="button red" type="button" onclick="javascript:window.location.href='./comprovanteSaida.html'">Saída</button>
+                </td>
+            </tbody> -->
+        </table>
+    </div>
+</body>
+</html>

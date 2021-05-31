@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/containerPrincipal.css" rel="stylesheet">
+    <link href="../css/containerEmpresa.css" rel="stylesheet">
+    <link href="../css/botoes.css" rel="stylesheet">
+    <title>Fast Parking - Comprovante Saida</title>
+</head>
+<body>
+    <div id="containerPrincipalEmpresa">
+        <div id="containerEmpresa">
+            <div id="caixaEmpresa">
+                <div id="nomeEmpresa">
+                    <h1>
+                        <span id="Fast">Fast</span>
+                        <span id="Parking">Parking</span>
+                    </h1>
+                </div>
+                <div id="fotoEmpresa"></div>
+            </div>
+        </div>
+
+        <div id="containerComprovanteEntrada">
+            <div id="caixaComprovanteEntrada">
+                <header>
+                    <h1>Comprovante de Saída</h1>
+                </header>      
+                <form class="form-receipt">
+                    <div>
+                        <label>Nome:</label>
+                        <input class="input-readonly" readonly/>
+                    </div>
+                    <div>
+                        <label>Placa:</label>
+                        <input class="input-readonly" readonly/>
+                    </div>
+                    <div>
+                        <label>Data:</label>
+                        <input class="input-readonly" readonly/>
+                    </div>
+                    <div>
+                        <label>Hora:</label>
+                        <input class="input-readonly" readonly/>
+                    </div>
+                </form>
+                <footer class="botoesRegistro">
+                    <button type="submit" class="button blue" id="imprimir">Imprimir</button>
+                    <button type="button" class="button red" id="cancelar" onclick="javascript:window.location.href='cadastro.html'">Cancelar</button>
+                </footer>
+            </div>
+        </div>
+    </div>   
+    
+    
+</body>
+</html>

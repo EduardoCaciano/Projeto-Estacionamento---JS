@@ -1,0 +1,224 @@
+#containerEmpresa{
+    height: 25vh;
+    width: 100vw;
+}
+
+#caixaEmpresa{
+    width: 80vw;
+    height: 30vh;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 400px;
+}
+
+#nomeEmpresa{
+    height: 30vh;
+    width: 50vh;
+    float: left;
+    font-family: 'Karla', sans-serif;
+}
+
+#nomeEmpresa h1 {
+    text-align: center;
+    padding-top: 100px;
+    font-size: 60px;
+}
+
+#Fast{
+    color: #105788;
+}
+
+#Parking{
+    color: #DBC403;
+}
+
+#fotoEmpresa{
+    height: 14vh;
+    width: 14vw;
+    background-image: url(../imgs/logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 85px;
+    margin-top: 7vh;
+    float: left;
+}
+
+/* REGISTRO CARRO */
+#containerPrincipalRegistro{
+    height: 35vh;
+    width: 100vw;
+}
+
+#containerRegistro{
+    height: 35vh;
+    width: 50vw;
+    background-color: rgba(36, 132, 196, 0.411);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    border: solid 3px black;
+}
+
+#formularioRegistro{
+    height: 25vh;
+    width: 45vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+#formularioRegistro label{
+    height: 55px;
+    width: 20px;
+    font-size: 25px;
+    margin-top: 105px;    
+}
+
+#formularioRegistro input{
+    height: 45px;
+    width: 20vw;
+    margin-left: 20px;
+    font-size: 14px;
+    border-radius: 3px;
+    border: 1px solid #000000;
+}
+
+/* TABELA */
+#tableCars {
+    width: 1200px;
+    text-align: center;
+
+    user-select: none;
+    border-collapse: collapse;
+    border: solid 2px black;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+#tableCars thead th{
+    background-color: #edf100;
+}
+
+#tableCars thead th,
+#tableCars tbody td{
+    border: solid 1px black;
+    padding: 13px;
+}
+
+#tableCars thead th:last-child,
+#tableCars tbody td:last-child{
+    max-width: 200px;
+    text-align: center;
+}
+
+/* PREÇO */
+#bodyPreco{
+    background-color: rgba(137, 250, 250, 0.349);
+}
+
+#containerPreco{
+    height: 35vh;
+    width: 50vw;
+    background-color: rgba(36, 132, 196, 0.411);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 220px;
+    border-radius: 15px;
+    border: solid 3px black;
+}
+
+#containerPreco header{
+    width: 48vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border-bottom: 1px solid black;
+}
+
+#containerRegistro{
+    height: 35vh;
+    width: 50vw;
+    background-color: rgba(36, 132, 196, 0.411);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    border: solid 3px black;
+}
+
+#formularioPreco{
+    height: 20vh;
+    width: 65vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 28px;
+}
+
+#formularioPreco label{
+    height: 55px;
+    width: 20px;
+    font-size: 25px;
+    margin-top: 105px;    
+}
+
+#formularioPreco input{
+    height: 45px;
+    width: 20vw;
+    margin-left: 20px;
+    font-size: 14px;
+    border-radius: 3px;
+    border: 1px solid #919191;
+}
+
+/* COMPROVANTE ENTRADA */
+#caixaComprovanteEntrada{
+    width: calc(40px + 40vw);
+    display: flex;
+    flex-direction: column;
+    
+    margin: 50px auto;
+    border-radius: 5px;
+}
+
+#caixaComprovanteEntrada header{
+    padding: 10px;
+    
+}
+
+#caixaComprovanteEntrada h1{
+    border-bottom: solid 1.5px rgba(63, 63, 63, 0.849) ;
+}
+
+.form-receipt{
+    display: flex;
+    flex-direction: column;
+    
+    gap: 30px;
+    margin: 40px auto;
+}
+
+.form-receipt div{
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+
+}
+
+.form-receipt label{
+    width: 280px;
+    text-align: center;
+}
+
+.input-readonly{
+    border-style: none;
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: solid 1px black;
+}
+
+.input-readonly:focus{
+    outline-style: none;
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: solid 1px black;
+}

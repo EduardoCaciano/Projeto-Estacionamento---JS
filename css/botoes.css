@@ -1,0 +1,42 @@
+.botoesRegistro{
+    height: 5vh;
+    width: 19vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.botoesRegistro button{
+    height: 4.5vh;
+    width: 100px;
+    margin-left: 45px;
+    border-radius: 15%;
+}
+
+.button.green {
+    background-color: #13CE66;
+    border: solid 1px #000000;
+    border-radius: 15%;
+}
+
+.button.yellow {
+    background-color: #d7db03;
+    border: solid 1px #000000;
+    border-radius: 15%;
+}
+
+.button.red {
+    background-color: #ff4949;
+    border: solid 1px #000000;
+    border-radius: 15%;
+}
+
+.button.blue {
+    background-color: #1fb6ff;
+    border: solid 1px #000000;
+    border-radius: 15%;
+}
+
+#botao button{
+    height: 30px;
+    width: 80px;
+}
