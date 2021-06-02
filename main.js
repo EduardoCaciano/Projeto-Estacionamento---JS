@@ -1,9 +1,5 @@
 'use strict'
 
-const readDB = () => JSON.parse(localStorage.getItem('db')) ?? []
-
-const setDB = (db) => localStorage.setItem('db', JSON.stringify(db))
-
 const date = new Date();
 const dateTime = {
     'day'    : date.getDate(),
@@ -11,6 +7,16 @@ const dateTime = {
     'year'   : date.getFullYear(),
     'hours'  : date.getHours(),
     'minutes': date.getMinutes()
+}
+
+const readDB = () => JSON.parse(localStorage.getItem('db')) ?? []
+
+const setDB = (db) => localStorage.setItem('db', JSON.stringify(db))
+
+const insertDB = (cliente) => {
+    const db = readDB()
+    db.push(cliente)
+    setDB(db)
 }
 
 const getDateNow = () => {
@@ -28,65 +34,64 @@ const getHoursNow = () =>{
     return timeNow;
 }
 
-const insertDB = (client) => {
-    const db = readDB()
-    db.push(client)
-    setDB(db)
-}
-
-
 const clearTable = () => {
-    const recordCar = document.querySelector('#tableCars tbody');
-    while (recordCar.firstChild) {
-        recordCar.removeChild(recordCar.lastChild);
+    const recordClient = document.querySelector('#tableCars tbody');
+    while (recordClient.firstChild) {
+        recordClient.removeChild(recordClient.lastChild)
     }
 }
 
-const createRow = (client, index) => {
-    const tabelaCarros = document.querySelector('#tabelaCarros tbody')
-    const newTr = document.createElement('tr')
-    newTr.innerHTML = `
-        <td>${client.nome}</td>
-        <td>${client.placa}</td>
-        <td>${getDateNow()}</td>
-        <td>${getHoursNow()}</td>
+const criaCliente = (cliente, index) => {
+    const tableCars = document.querySelector('#tableCars tbody');
+    const novoTr = document.createElement('tr');
+    novoTr.innerHTML = `
+        <td>${cliente.nome}</td>
+        <td>${cliente.placa}</td>
+        <td>${cliente.data}</td>
+        <td>${cliente.hora}</td>
         <td id="botao">
-            <button id="button-receipt" class="button green" type="button" onclick="javascript:window.location.href='./comprovanteEntrada.html'">Comp.</button>
-            <button id="button-edit" class="button blue" type="button">Editar</button>
-            <button id="button-exit" class="button red" type="button" onclick="javascript:window.location.href='./comprovanteSaida.html'">Saída</button>
+            <button data-index="${index}" id="button-receipt" class="button green" type="button" onclick="javascript:window.location.href='comprovanteEntrada.html'">Comp.</button>
+            <button data-index="${index}" id="button-edit" class="button blue" type="button">Editar</button>
+            <button data-index="${index}" id="button-exit" class="button red" type="button" onclick="javascript:window.location.href='comprovanteSaida.html'">Saída</button>
         </td>
-    `
-    tabelaCarros.appendChild(newTr)
+    `;
+    tableCars.appendChild(novoTr);
 } 
 
 const updateTable = () =>{
     clearTable()
     const db = readDB();
-    db.forEach(createRow)
+    db.forEach(criaCliente)
 }
 
-const salvar = () =>{
-    const nweCar = {
+const adicionar = () =>{
+    const adicionarCliente = {
         nome  : document.querySelector('#nome').value,
-        placa : document.querySelector('#placa').value
+        placa : document.querySelector('#placa').value,
+        data  : getDateNow(),
+        hora  : getHoursNow()
     }
-    insertDB(nweCar);
-    clearInputs();
+    insertDB(adicionarCliente);
     updateTable();
 }
 
-const clearInputs = () =>{
-    const inputs = Array.from(document.querySelectorAll('input'));
-    inputs.forEach(input => input.value = "");
+const openModal = () => document.querySelector('#modal')
+    .classList.add('active')
+
+const closeModal = () => document.querySelector('#modal')
+    .classList.remove('active')
+
+const editClient = (index) => {
+    const db = readDB()
+    document.querySelector('#nome').value = db[index].nome
+    document.querySelector('#placa').value = db[index].placa
+    openModal();
 }
 
+document.querySelector('#editar')
+    .addEventListener('click', openModal)
 
-document.querySelector('#salvar')
-    .addEventListener('click', salvar)
-    
+document.querySelector('#adicionar')
+            .addEventListener('click', adicionar)
 
-const printRecipt = () =>{
-    window.print();
-}
-    
 updateTable()
